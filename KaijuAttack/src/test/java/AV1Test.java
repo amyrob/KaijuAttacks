@@ -12,11 +12,7 @@ public class AV1Test {
     @Before
     public void before(){
         av1 = new AV1("Tank", 100);
-    }
 
-    @Test
-    public void canAttack() {
-        assertEquals("Launching rockets", av1.attack("rockets"));
     }
 
     @Test

@@ -1,5 +1,9 @@
 package Kaiju;
 
+import Vehicles.AV1;
+import Vehicles.IDamage;
+import Vehicles.Vehicle;
+
 import java.util.ArrayList;
 
 public abstract class Kaiju implements IAttack {
@@ -22,11 +26,17 @@ public abstract class Kaiju implements IAttack {
         return "*Massive " + attackMethod + "*";
     }
 
+
+
     public int getHealthValue() {
         return healthValue;
     }
 
     public int getAttackValue() {
         return attackValue;
+    }
+
+    public void dealDamage(IDamage damageTaker) {
+       damageTaker.takeDamage(this.attackValue);
     }
 }

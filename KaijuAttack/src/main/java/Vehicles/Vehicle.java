@@ -1,20 +1,14 @@
 package Vehicles;
 
-import Kaiju.IAttack;
-import Kaiju.Kaiju;
+import Vehicles.IDamage;
 
-public abstract class Vehicle implements IAttack {
+public abstract class Vehicle implements IDamage {
     private String type;
     private int healthValue;
 
     public Vehicle(String type, int healthValue) {
         this.type = type;
         this.healthValue = healthValue;
-    }
-
-    @Override
-    public String attack(String attackMethod) {
-        return "Launching " + attackMethod;
     }
 
     public String getType() {
@@ -25,4 +19,9 @@ public abstract class Vehicle implements IAttack {
         return healthValue;
     }
 
+    @Override
+    public int takeDamage(int damageValue) {
+        this.healthValue -= damageValue;
+        return this.getHealthValue();
+    }
 }
